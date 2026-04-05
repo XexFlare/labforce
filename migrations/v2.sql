@@ -1,0 +1,15 @@
+CREATE TABLE `labforce`.`tbl_photos` (`id` serial NOT NULL,`parent_id` int,`parent_type` varchar(50),`file` varchar(255), PRIMARY KEY (id));
+CREATE TABLE `labforce`.`locations` (`id` serial,`unit` int,`name` varchar(255), PRIMARY KEY (id));
+CREATE TABLE `labforce`.`sweepings` (`id` serial,`grade` varchar(50), `color` int,`moisture` varchar(6),`particle_size` varchar(50),`foreign_matter` varchar(50),`appearance` varchar(50),`approx_age` varchar(50),`origin` varchar(50),`approx_tonnage` float,`contract_id` int,`done_by` int,`sweepingNum` varchar(20),`date` datetime, PRIMARY KEY (id));
+CREATE TABLE `labforce`.`visual_inspections` (`id` serial,`uniform` varchar(30) NOT NULL,`uniform_color` boolean,`uniform_size_distribution` boolean,`clean_package` boolean,`uniform_seal` boolean,`damaged` boolean,`separated` boolean,`damaged_by` varchar(255),`damaged_by_other` varchar(255),`included` varchar(255), PRIMARY KEY (id));
+ALTER TABLE `labforce`.`sweepings` DROP COLUMN `batch_id`;
+ALTER TABLE `labforce`.`sweepings` ADD COLUMN `grade` varchar(50) NULL COMMENT '';
+ALTER TABLE `labforce`.`sweepings` ADD COLUMN `contract_id` int NULL COMMENT '';
+ALTER TABLE `labforce`.`tbl_photos` ADD COLUMN `ref` varchar(20) NULL COMMENT '';
+ALTER TABLE `labforce`.`tbl_photos` ADD COLUMN `location_id` int NULL COMMENT '';
+ALTER TABLE `labforce`.`sweepings` CHANGE `color` `color` varchar(20) NULL COMMENT '';
+ALTER TABLE `labforce`.`tbl_photos` ADD COLUMN `comments` varchar(255) NULL COMMENT '';
+ALTER TABLE `labforce`.`tbl_batches` ADD COLUMN `blendBatchNum` varchar(30) NULL COMMENT '';
+ALTER TABLE `labforce`.`sweepings` CHANGE `sweepingNum` `sweeping_num` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL COMMENT '';
+ALTER TABLE `labforce`.`alert_recipients` CHANGE `condition` `condition` varchar(51) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL COMMENT '';
+ALTER TABLE `labforce`.`visual_inspections` ADD COLUMN `test_id` int NOT NULL COMMENT '';

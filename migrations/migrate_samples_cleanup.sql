@@ -1,0 +1,9 @@
+ALTER TABLE `labforce`.`tbl_batches` DROP COLUMN `countryID`;
+ALTER TABLE `labforce`.`tbl_batches` DROP COLUMN `fertilizerType`;
+ALTER TABLE `labforce`.`tbl_batches` DROP COLUMN `shipID`;
+ALTER TABLE `labforce`.`tbl_batches` DROP COLUMN `supplierID`;
+ALTER TABLE `labforce`.`tbl_batches` DROP COLUMN `meridianID`;
+ALTER TABLE `labforce`.`tbl_batches` DROP COLUMN `site_manager`;
+ALTER TABLE `labforce`.`tbl_batches` DROP COLUMN `site_manager_comment`;
+ALTER TABLE `labforce`.`tbl_batches` DROP COLUMN `lab_tech`;
+ALTER TABLE `labforce`.`tbl_batches` DROP COLUMN `lab_tech_comment`;

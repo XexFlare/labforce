@@ -1,0 +1,4 @@
+connect/.env
+vendor/*
+images/analysis/*
+*.code-workspace
